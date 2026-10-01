@@ -6,7 +6,11 @@
 #include <string>
 #include <sstream>
 
+#define DEBUG
+
 using namespace std;
+
+
 
 typedef struct STUDENT_DATA {
 	string firstname;
@@ -33,15 +37,19 @@ vector<STUDENT_DATA> parseStuDat() {
 
 		students.push_back(stu);
 	}
+
+	#ifdef DEBUG
+		for (int i = 0; i < students.size();i++) {
+			STUDENT_DATA s = students[i];
+			printf("%s , %s\n", s.firstname.c_str(), s.lastname.c_str());
+		}
+	#endif // DEBUG
+
 	return students;
  }
 
 int main(void) {
 	vector<STUDENT_DATA> v = parseStuDat();
 
-	for (int i = 0; i < v.size();i++) {
-		STUDENT_DATA s = v[i];
-		printf("%s , %s\n", s.firstname.c_str(), s.lastname.c_str());
-	}
 	return 1;
 }
