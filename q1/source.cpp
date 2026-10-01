@@ -6,10 +6,9 @@
 #include <string>
 #include <sstream>
 
-#define DEBUG
 //#define PRE_RELEASE 
-using namespace std;
 
+using namespace std;
 
 
 typedef struct STUDENT_DATA {
@@ -53,7 +52,7 @@ vector<STUDENT_DATA> parseStuDat() {
 		students.push_back(stu);
 	}
 
-	#ifdef DEBUG
+	#ifdef _DEBUG
 	for (int i = 0; i < students.size();i++) {
 		STUDENT_DATA s = students[i];
 
